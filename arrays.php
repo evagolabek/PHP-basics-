@@ -19,7 +19,7 @@ $cars[] = 'jaguar';
 echo $cars[3];
 
 echo count($cars);
-$print_r($cars); //prints out the entire array to the screen, handy for debugging
+print_r($cars); //prints out the entire array to the screen, handy for debugging
 var_dump($cars); //shows what it is, its value, key and value and data type and numbers of characters, tells you everything
 
 //associative
