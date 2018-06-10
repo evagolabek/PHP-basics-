@@ -33,7 +33,7 @@ if(isset($_GET['name'])) {
 ?>
 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
       <title>My Website</title>
@@ -52,7 +52,7 @@ if(isset($_GET['name'])) {
       <input type="submit" value="Submit">
     </form>
   </body>
-</html> -->
+</html>
 
   <!DOCTYPE html>
   <html>
