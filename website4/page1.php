@@ -4,6 +4,8 @@ if(isset($_POST['submit'])){
 
   $_SESSION['name'] = htmlentities($_POST['name']);
   $_SESSION['email'] = htmlentities($_POST['email']);
+
+  header('Location: page2.php');
 }
 
 
@@ -21,7 +23,7 @@ if(isset($_POST['submit'])){
     <br>
     <input type="text" name="email" placeholder="Enter Email">
     <br>
-    <input type="sumbit" name="submit" value="Submit">
+    <input type="submit" name="submit" value="Submit">
   </form>
 
 </body>
