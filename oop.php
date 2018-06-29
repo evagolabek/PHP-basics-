@@ -18,7 +18,11 @@ class Person{
   public function __construct($name, $email){
     $this->name = $name;
     $this->email = $email;
-    echo 'Person created<br>';
+    echo __CLASS__.' created<br>';  //__CLASS__ - we get the name of the class
+  }
+
+  public function __destruct(){
+    echo __CLASS__.' destroy<br>';
   }
 
   public function setName($name){
@@ -38,12 +42,34 @@ class Person{
   }
 }
 
-$person1 = new Person('John Doe', 'jdoe@email.com');  //instantiate of person object
+//$person1 = new Person('John Doe', 'jdoe@email.com');  //instantiate of person object
 
 //$person1->setName('John Doe');
 
-echo $person1->getName();
+//echo $person1->getName();
 
 //$person1->name = 'John Doe';
 
 //echo $person1->name;
+
+class Customer extends Person {
+  private $balance;
+
+  public function __construct($name, $email, $balance){
+    parent::__construct($name, $email, $balance);
+    $this->balance =$balance;
+    echo 'A new '.__CLASS__.'has been created';
+  }
+
+  public function setBalance($balance){
+    $this->balance =$balance;
+  }
+
+  public function getBalance(){
+    return $this->balance.'<br>';
+  }
+}
+
+$customer1 = new Customer('John Doe', 'jdoe@email.com', 300);
+
+echo $customer1->getBalance();
