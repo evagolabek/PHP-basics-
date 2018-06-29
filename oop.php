@@ -14,18 +14,33 @@ class Person{
   private $name;
   private $email;
 
+  //constructor-method that runs when the object is created, you can pass things to it
+  public function __construct($name, $email){
+    $this->name = $name;
+    $this->email = $email;
+    echo 'Person created<br>';
+  }
+
   public function setName($name){
     $this->name =$name;
   }
 
   public function getName(){
-    return $this->name;
+    return $this->name.'<br>';
+  }
+
+  public function setEmail($email){
+    $this->email =$email;
+  }
+
+  public function getEmail($email){
+    return $this->email.'<br>';
   }
 }
 
-$person1 = new Person;  //instantiate of person object
+$person1 = new Person('John Doe', 'jdoe@email.com');  //instantiate of person object
 
-$person1->setName('John Doe');
+//$person1->setName('John Doe');
 
 echo $person1->getName();
 
