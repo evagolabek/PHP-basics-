@@ -13,6 +13,7 @@
 class Person{
   private $name;
   private $email;
+  private static $ageLimit = 40;
 
   //constructor-method that runs when the object is created, you can pass things to it
   public function __construct($name, $email){
@@ -40,7 +41,15 @@ class Person{
   public function getEmail($email){
     return $this->email.'<br>';
   }
+
+  public static function getAgeLimit(){
+    return self::$ageLimit;
+  }
 }
+
+//static props and method
+//echo Person::$ageLimit;
+echo Person::getAgeLimit();
 
 //$person1 = new Person('John Doe', 'jdoe@email.com');  //instantiate of person object
 
@@ -52,13 +61,13 @@ class Person{
 
 //echo $person1->name;
 
-class Customer extends Person {
+class Customer extends Person{
   private $balance;
 
   public function __construct($name, $email, $balance){
     parent::__construct($name, $email, $balance);
     $this->balance =$balance;
-    echo 'A new '.__CLASS__.'has been created';
+    echo 'A new '.__CLASS__.'has been created<br>';
   }
 
   public function setBalance($balance){
@@ -70,6 +79,7 @@ class Customer extends Person {
   }
 }
 
-$customer1 = new Customer('John Doe', 'jdoe@email.com', 300);
 
-echo $customer1->getBalance();
+//$customer1 = new Customer('John Doe', 'jdoe@email.com', 300);
+
+//echo $customer1->getBalance();
