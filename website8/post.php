@@ -25,13 +25,7 @@ mysqli_close($conn);
 ?>
 
 
-<!DOCTYPE html>
-  <html>
-    <head>
-      <title>PHP Blog</title>
-      <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
-    </head>
-  <body>
+<?php include('inc/header.php'); ?>
     <div class="container">
           <a href="<?php echo ROOT_URL; ?>" class="btn btn-default">Back</a>
           <h1><?php echo $post['title']; ?></h1>
@@ -39,5 +33,4 @@ mysqli_close($conn);
           by <?php echo $post['author']; ?></small>
           <p><?php echo $post['body']; ?></p>
     </div>
-  </body>
-</html>
+<?php include('inc/footer.php'); ?>

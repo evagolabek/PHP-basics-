@@ -1,7 +1,7 @@
 <?php
 
 //create connection to SQL
-$conn = mysqli_connect('localhost', 'root', '12345', 'phpblog');
+$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 //check the connection
 if(mysqli_connect_errno()){
