@@ -1,10 +1,18 @@
 <?php
 
-//create connection to SQL
-$conn = mysqli_connect('localhost', 'root', '123456', 'phpblog');
+require('config/db.php');
 
-//check the connection
-if(mysqli_connect_errno()){
-  //connection failed
-  echo'Failed to connect to MySQL'. mysqli_connect_errno;
-}
+//Create Query
+$query = 'SELECT * FROM tablepost';
+
+//Get Result
+$result = mysqli_query($conn, $query);
+
+//Fetch data
+$posts = mysqli_fetch_all($result, MYSQLI_ASSOC); //assoc of array: ['name' => 'Brand']
+var_dump($posts);
+//free the result
+mysqli_free_result($result);
+
+//close the connection
+mysqli_close($conn);
