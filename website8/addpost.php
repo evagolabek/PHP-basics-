@@ -3,6 +3,23 @@
 require('config/config.php');
 require('config/db.php');
 
+//check for submit (TOdo - validation??)
+if(isset($_POST['submit'])){
+  //echo 'Submitted';
+  //get the form data, mysqli_real_escape_string thing protect from harmful shit people can do, you need to add conn always as a first parametere
+  $title = mysqli_real_escape_string($conn, $_POST['title']);
+  $body = mysqli_real_escape_string($conn, $_POST['body']);
+  $author = mysqli_real_escape_string($conn, $_POST['author']);
+
+  $query = "INSERT INTO posts(title, author, body) VALUES('$title', '$author', '$body')";
+
+  if(mysqli_query($conn, $query)){
+    header('Loctaion: '.ROOT_URL.'');
+  } else {
+    echo 'ERROR: '. mysqli_error($conn);
+  }
+}
+
 ?>
 
 
